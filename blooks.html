@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blooket4Free | My Blooks</title>
+  <link rel="icon" type="image/x-icon" href="./assets/misc_images/favicon.ico">
+
+  <link rel="stylesheet"
+    href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/121a1462914990a5.css"
+    data-precedence="next">
+  <link rel="stylesheet"
+    href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/7d2a7f4491889bcd.css"
+    data-precedence="next">
+  <link rel="stylesheet"
+    href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/43cb5a8b08a4fd81.css"
+    data-precedence="next">
+  <link rel="stylesheet"
+    href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/a0406186fc01ce56.css"
+    data-precedence="next">
+  <link rel="stylesheet"
+    href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/453191536c2b89e6.css"
+    data-precedence="next">
+  <link rel="stylesheet"
+    href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/51e88ac748998e08.css"
+    data-precedence="next">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Titan+One&display=swap" rel="stylesheet">
+
+  <style>
+    .TokenCounter_tokenContainer__wE6XL {
+      display: none !important;
+    }
+
+    #blook-modal-template {
+      display: none;
+    }
+
+    .BlooksWrapper_content__wfMjd,
+    .BlooksWrapper_container___qLk4,
+    .layout_main__mXTwS {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -300px;
+
+      height: 100%;
+      width: 300px;
+      transition: left 0.3s ease;
+      z-index: 1005;
+    }
+
+    #sidebar.active {
+      left: 0;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      z-index: 1004;
+    }
+
+    #overlay.active {
+      display: block;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 35px;
+      right: 25px;
+
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      z-index: 1003;
+    }
+
+    .hamburger img {
+      width: 30px;
+
+      height: 30px;
+      filter: drop-shadow(4px 4px var(--gray-shadow));
+      transition: transform 0.2s;
+    }
+
+    .hamburger img:hover {
+      transform: scale(0.95);
+    }
+
+    .Sidebar_logoDesktop__NeFcd {
+      display: block !important;
+      margin: 0 auto 0 !important;
+
+      width: 80% !important;
+    }
+
+    @media (max-width: 849px) {
+      .Sidebar_logoDesktop__NeFcd {
+        margin-top: 20px !important;
+      }
+    }
+
+    #sidebar.Sidebar_sidebar__J7H_G {
+      justify-content: flex-start !important;
+    }
+
+    #modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 9999;
+
+    }
+
+    #modal-overlay.active {
+      display: block;
+    }
+
+    .BlookModal_blookModal__kZ5LX {
+      z-index: 10000;
+    }
+
+    .custom-pack-badge {
+      display: inline-block;
+      margin-left: 8px;
+      background: #0bc2cf;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-family: 'Titan One', sans-serif;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      vertical-align: middle;
+      z-index: 10;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body class="__variable_b724e5 __variable_f9d1f4">
+
+  <nav id="sidebar" class="Sidebar_sidebar__J7H_G">
+    <img alt="Blooket" loading="lazy" width="168" decoding="async" data-nimg="1" class="Sidebar_logoDesktop__NeFcd"
+      src="./assets/misc_images/logo.png">
+    <ul class="Sidebar_list__ljw79">
+      <li>
+        <a class="Sidebar_link__pbkfx" href="./blooks.html">
+          <span class="Sidebar_listIcon__rg5X6">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+              class="svg-inline--fa fa-suitcase fa-w-16">
+              <path fill="currentColor"
+                d="M128 480h256V80c0-26.5-21.5-48-48-48H176c-26.5 0-48 21.5-48 48v400zm64-384h128v32H192V96zm320 80v256c0 26.5-21.5 48-48 48h-48V128h48c26.5 0 48 21.5 48 48zM96 480H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48h48v352z">
+              </path>
+            </svg>
+          </span>
+          <span class="Sidebar_text__TwkTk">Blooks</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="Sidebar_link__pbkfx" href="./">
+          <span class="Sidebar_listIcon__rg5X6">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 616 512"
+              class="svg-inline--fa fa-store fa-w-20">
+              <path fill="currentColor"
+                d="M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-33.5 53.5-3.8 127.9 58.8 136.4 4.5.6 9.1.9 13.7.9 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18.1 20.1 44.3 33.1 73.8 33.1 4.7 0 9.2-.3 13.7-.9 62.8-8.4 92.6-82.8 59-136.4zM529.5 288c-10 0-19.9-1.5-29.5-3.8V384H116v-99.8c-9.6 2.2-19.5 3.8-29.5 3.8-6 0-12.1-.4-18-1.2-5.6-.8-11.1-2.1-16.4-3.6V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32V283.2c-5.4 1.6-10.8 2.9-16.4 3.6-6.1.8-12.1 1.2-18.2 1.2z">
+              </path>
+            </svg>
+          </span>
+          <span class="Sidebar_text__TwkTk">Market</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="Sidebar_link__pbkfx" href="./maker.html">
+          <span class="Sidebar_listIcon__rg5X6" style="scale: 1.2; margin-top: 8px;">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+              class="svg-inline--fa fa-store fa-w-20">
+              <path fill="currentColor"
+                d="M328.41269,285.7436l-39.66604,39.66604c-6.74045,6.74045 -17.67231,6.74045 -24.41283,0l-37.62562,-37.62562c-7.2319,-7.2307 -17.23499,-10.72933 -27.4579,-9.61416c-10.19073,1.11982 -19.19375,6.71398 -24.69935,15.35103c-70.47063,110.55325 -80.77985,120.86374 -84.16789,124.25065c-24.27818,24.28044 -63.82566,24.32878 -88.15445,0c-24.30458,-24.30577 -24.30458,-63.851 0,-88.15445c3.38578,-3.38691 13.69155,-13.69387 124.25059,-84.16909c8.65779,-5.51943 14.26465,-14.52591 15.38214,-24.71198c1.11862,-10.19299 -2.39716,-20.19727 -9.64635,-27.4464l-37.62562,-37.62562c-3.23843,-3.23617 -5.05677,-7.62774 -5.05677,-12.20582c0,-4.57801 1.81946,-8.96851 5.05677,-12.20582l39.66491,-39.66491zM64.61681,355.38332c-9.52786,-9.52892 -24.97676,-9.52892 -34.50568,0c-9.52892,9.52786 -9.52892,24.97676 0,34.50568c9.52786,9.52892 24.97676,9.52892 34.50568,0c9.52892,-9.52892 9.52892,-24.97789 0,-34.50568zM353.92565,260.23176l-194.15848,-194.15841l137.0192,-137.01801c6.74164,-6.74045 17.67231,-6.74045 24.41276,0l17.64013,17.6378c5.07405,5.07518 6.48039,12.75818 3.53081,19.30074l-4.65288,10.32305l9.71656,-4.67815c6.60813,-3.18437 14.50756,-1.8414 19.69551,3.34662l56.19553,56.1956c5.83361,5.83128 6.72436,14.97594 2.12906,21.82457l-36.79818,54.83986l54.47162,-37.02259c6.85209,-4.65634 16.05074,-3.7874 21.90968,2.07154l25.90661,25.90654c6.74164,6.74164 6.74164,17.67231 0,24.41283z">
+              </path>
+            </svg>
+          </span>
+          <span class="Sidebar_text__TwkTk">Pack Maker</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="overlay"></div>
+
+  <button id="hamburgerBtn" class="hamburger">
+    <img src="./assets/misc_images/borgor.svg" alt="Menu">
+  </button>
+
+  <main class="layout_main__mXTwS">
+    <div class="page_wrapper___woS4" data-sentry-component="Blooks">
+
+      <div class="_background_l90pt_1" style="background:linear-gradient(#0bc2cf,#349aef)">
+        <div class="_checkers_l90pt_12" style="background-size:1000px"></div>
+      </div>
+
+      <h1 class="BlooksWrapper_header__OMK6W">Blooket4Free</h1>
+
+      <div class="BlooksWrapper_content__wfMjd">
+        <div class="BlooksWrapper_container___qLk4">
+          <div class="BlooksHeader_row__D7cwg" data-sentry-component="BlooksHeader">
+            <div class="BlooksHeader_buttons__0DDTc">
+              <label class="BlooksHeader_button__I4Kms">
+                <input id="toggle-free" type="checkbox" name="free">
+                <span class="BlooksHeader_checkmark__Zztu9">
+
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check"
+                    class="svg-inline--fa fa-check fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                    </path>
+                  </svg>
+                </span>
+                Show Free Blooks
+              </label>
+
+              <label class="BlooksHeader_button__I4Kms">
+                <input id="toggle-packs" type="checkbox" name="packs" checked>
+                <span class="BlooksHeader_checkmark__Zztu9">
+
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check"
+                    class="svg-inline--fa fa-check fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                    </path>
+                  </svg>
+                </span>
+                Show Packs
+              </label>
+            </div>
+          </div>
+
+          <div class="BlooksPacks_container__nayTq" data-sentry-component="BlooksPacksContainer">
+            <div id="packs-scroll" class="BlooksPacks_scrollbox__SPjLM"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="blook-modal-template">
+    <div class="_modal_fhi6r_13 BlookModal_blookModal__kZ5LX">
+      <button type="button" class="_closeIcon_fhi6r_70" aria-label="Close">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times"
+          class="svg-inline--fa fa-times fa-w-11 " viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor"
+            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+          </path>
+        </svg>
+        <span class="_srOnly_fhi6r_86">Close</span>
+      </button>
+
+      <div class="BlookModal_modalWrapper__TnRyt">
+        <div class="BlookModal_modalBlook__y3uOR" data-sentry-component="BlookModalImage">
+          <div class="_blookContainer_inzvw_1" data-tooltip-id="blook-tooltip"
+            style="width:140px; z-index: var(--z-index-top);">
+            <img class="_blook_inzvw_1" id="modal-img" src="" alt="" draggable="false">
+          </div>
+          <img id="modal-bg" class="BlookModal_blookBackground__azqLO" src="" alt="">
+        </div>
+
+        <form class="BlookModal_modalForm__PdjL_" action="javascript:;">
+          <input type="hidden" name="blook" value="">
+          <div class="BlookModal_modalInfo__Z2VdS" id="modal-info"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-overlay"></div>
+
+  <script src="./assets/js/freepackdata.js"></script>
+  <script src="./assets/js/packdata.js"></script>
+  <script src="./assets/js/seasonalpackdata-market.js"></script>
+
+  <script src="./assets/js/indexed-db.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.matchMedia("(max-width: 625px)").matches) {
+        alert("Hello! This website is not at all made for mobile devices. For the best experience, go open this on a computer. \n \n(If you are on a computer and see this message, just rezise the window.)");
+      }
+    });
+
+    function esc(s) { if (s == null) return ''; return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+    function normRarity(r) { return r ? String(r).trim().replace(/\s+/g, '') : 'Common'; }
+
+    async function loadCustomPacks() {
+      try {
+        return await packDB.loadCustomPacks();
+      } catch (error) {
+        console.error('Error loading custom packs:', error);
+        return [];
+      }
+    }
+
+    function cleanDisplayName(name) {
+      return name.replace(/_custom$/, "");
+    }
+
+    document.addEventListener('DOMContentLoaded', async function () {
+      const packsScroll = document.getElementById('packs-scroll');
+      const chkFree = document.getElementById('toggle-free');
+      const chkPacks = document.getElementById('toggle-packs');
+      const modalTemplate = document.querySelector('#blook-modal-template > div');
+
+      const freeArr = (typeof freePackData !== 'undefined' && Array.isArray(freePackData)) ? freePackData : [];
+      const packArr = (typeof packData !== 'undefined' && Array.isArray(packData)) ? packData : [];
+      const seasonalArr = (typeof seasonalPackData !== 'undefined' && Array.isArray(seasonalPackData)) ? seasonalPackData : [];
+
+      const customArr = await loadCustomPacks();
+
+      const order = ["medieval", "wonderland", "breakfast", "space", "bot", "aquatic", "safari", "dino", "iceMonsters", "outback", "pirate", "bug", "lunch"];
+
+      packArr.sort((a, b) => {
+        const aIndex = order.indexOf(a.id);
+        const bIndex = order.indexOf(b.id);
+        return (aIndex === -1 ? Infinity : aIndex) - (bIndex === -1 ? Infinity : bIndex);
+      });
+
+      const allPacks = [
+        ...freeArr.map(p => (Object.assign({}, p, { _isFree: true }))),
+        ...packArr.map(p => (Object.assign({}, p, { _isFree: false }))),
+        ...seasonalArr.map(p => (Object.assign({}, p, { _isFree: false }))),
+        ...customArr.map(p => (Object.assign({}, p, { _isFree: false, _isCustom: true })))
+      ];
+
+      function expandColorPack(pack) {
+        if (pack.colorBlook && pack.colorBlook.length > 0) {
+          const baseNames = Array.isArray(pack.blook) ? [...pack.blook] : [];
+          const baseSvgs = Array.isArray(pack.svg) ? [...pack.svg] : [];
+          const baseRarities = Array.isArray(pack.rarity) ? [...pack.rarity] : [];
+          const baseChances = Array.isArray(pack.chance) ? [...pack.chance] : [];
+
+          baseNames.pop();
+          baseSvgs.pop();
+          baseRarities.pop();
+          baseChances.pop();
+
+          pack.colorBlook.forEach((b, i) => {
+            baseNames.push(b);
+            baseSvgs.push(pack.colorSvg ? pack.colorSvg[i] : '');
+            baseRarities.push(pack.colorRarity ? pack.colorRarity[i] : 'Chroma');
+            baseChances.push(pack.colorChance ? pack.colorChance[i] : 0);
+          });
+
+          pack.blook = baseNames;
+          pack.svg = baseSvgs;
+          pack.rarity = baseRarities;
+          pack.chance = baseChances;
+        }
+        return pack;
+      }
+
+      allPacks.forEach((p, i) => { allPacks[i] = expandColorPack(p); });
+
+      function createTile(name, img, rarity, pIdx, bIdx) {
+        const displayName = cleanDisplayName(name);
+        const rn = normRarity(rarity || 'Common');
+        const root = document.createElement('div');
+        root.className = 'BlookModal_blook__h0dTV';
+        root.dataset.pack = String(pIdx);
+        root.dataset.index = String(bIdx);
+
+        const stored = JSON.parse(localStorage.getItem("blooksCollection")) || {};
+        const count = stored[name] || 0;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'BlookModal_blookButton__hSYIJ';
+
+        const inner = document.createElement('div');
+        inner.className = '_blookContainer_inzvw_1';
+        inner.setAttribute('data-tooltip-id', 'blook-tooltip');
+
+        const imgEl = document.createElement('img');
+        imgEl.className = '_blook_inzvw_1';
+        imgEl.draggable = false;
+        imgEl.src = img || '';
+        imgEl.alt = displayName || '';
+
+        inner.appendChild(imgEl);
+        btn.appendChild(inner);
+        root.appendChild(btn);
+
+        if (count > 0) {
+          const badge = document.createElement('div');
+          badge.className = 'BlookModal_quantity__BiP_5';
+          badge.style.backgroundColor = `var(--${rn})`;
+          badge.textContent = count;
+          root.appendChild(badge);
+          root.dataset.locked = "false";
+        } else {
+          root.dataset.locked = "true";
+          imgEl.style.filter = "brightness(0.2)";
+
+          const lock = document.createElement("img");
+          lock.src = "./assets/misc_images/lock.svg";
+          lock.style.position = "absolute";
+          lock.style.top = "55%";
+          lock.style.left = "50%";
+          lock.style.transform = "translate(-50%, -50%)";
+          lock.style.width = "40%";
+          lock.style.zIndex = 2;
+
+          root.style.position = "relative";
+          root.appendChild(lock);
+        }
+
+        return root;
+      }
+
+      function render() {
+        packsScroll.innerHTML = '';
+        const showFree = chkFree ? chkFree.checked : true;
+        const grouped = chkPacks ? chkPacks.checked : true;
+
+        if (!grouped) {
+          const grid = document.createElement('div');
+          grid.className = 'BlooksPacks_blooks__ocBoL';
+          allPacks.forEach((pack, pIdx) => {
+            if (pack._isFree && !showFree) return;
+            const names = Array.isArray(pack.blook) ? pack.blook : (Array.isArray(pack.blooks) ? pack.blooks : []);
+            const svgs = Array.isArray(pack.svg) ? pack.svg : (Array.isArray(pack.svgs) ? pack.svgs : []);
+            const rarities = Array.isArray(pack.rarity) ? pack.rarity : [];
+            names.forEach((entry, i) => {
+              let name = '', img = '', rarity = 'Common';
+              if (typeof entry === 'string') {
+                name = entry;
+                img = svgs[i] || '';
+                rarity = rarities[i] || pack.rarity || 'Common';
+              } else {
+                name = entry.name || entry.title || '';
+                img = entry.svg || entry.image || svgs[i] || '';
+                rarity = entry.rarity || rarities[i] || pack.rarity || 'Common';
+              }
+              grid.appendChild(createTile(name, img, rarity, pIdx, i));
+            });
+          });
+          packsScroll.appendChild(grid);
+          return;
+        }
+
+        allPacks.forEach((pack, pIdx) => {
+          if (pack._isFree && !showFree) return;
+          const names = Array.isArray(pack.blook) ? pack.blook : (Array.isArray(pack.blooks) ? pack.blooks : []);
+          if (!names.length) return;
+          const svgs = Array.isArray(pack.svg) ? pack.svg : (Array.isArray(pack.svgs) ? pack.svgs : []);
+          const rarities = Array.isArray(pack.rarity) ? pack.rarity : [];
+          const packDiv = document.createElement('div');
+          packDiv.className = 'BlooksPacks_pack___MJtt';
+
+          let bg = pack.tileBackground || pack.bg || '';
+          if (bg && !String(bg).trim().startsWith('linear-gradient')) bg = `url('${esc(bg)}')`;
+
+          const packTitle = pack.name || pack.title || '';
+
+          packDiv.innerHTML = `
+        <div class="BlooksPacks_textureHeader__1ecGZ">
+          <div class="BlooksPacks_texture__7_8Gf" style="background-image:${bg}"></div>
+          <h2 class="BlooksPacks_title__qiDcM">
+            ${esc(packTitle)}
+            ${pack._isCustom ? '<span class="custom-pack-badge">Custom</span>' : ''}
+          </h2>
+        </div>
+        <div class="BlooksPacks_divider__mT_iM"></div>
+        <div class="BlooksPacks_blooks__ocBoL"></div>`;
+
+          const container = packDiv.querySelector('.BlooksPacks_blooks__ocBoL');
+          names.forEach((entry, i) => {
+            let name = '', img = '', rarity = 'Common';
+            if (typeof entry === 'string') {
+              name = entry;
+              img = svgs[i] || '';
+              rarity = rarities[i] || pack.rarity || 'Common';
+            } else {
+              name = entry.name || entry.title || '';
+              img = entry.svg || entry.image || svgs[i] || '';
+              rarity = entry.rarity || rarities[i] || pack.rarity || 'Common';
+            }
+            container.appendChild(createTile(name, img, rarity, pIdx, i));
+          });
+          packsScroll.appendChild(packDiv);
+        });
+      }
+
+      function openModal(packIdx, bIdx, clickedTile) {
+        closeModal();
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        if (modalOverlay) modalOverlay.classList.add('active');
+
+        const pack = allPacks[Number(packIdx)];
+        if (!pack) return;
+        const names = Array.isArray(pack.blook) ? pack.blook : (Array.isArray(pack.blooks) ? pack.blooks : []);
+        const svgs = Array.isArray(pack.svg) ? pack.svg : (Array.isArray(pack.svgs) ? pack.svgs : []);
+        const rarities = Array.isArray(pack.rarity) ? pack.rarity : [];
+        const descs = Array.isArray(pack.blookDesc) ? pack.blookDesc : (Array.isArray(pack.descs) ? pack.descs : []);
+        const entry = names[Number(bIdx)];
+        if (!entry) return;
+
+        let name = '', imgSrc = '', rarity = 'Common', desc = '';
+        if (typeof entry === 'string') {
+          name = entry;
+          imgSrc = svgs[bIdx] || '';
+          rarity = rarities[bIdx] || pack.rarity || 'Common';
+          desc = descs[bIdx] || '';
+        } else {
+          name = entry.name || entry.title || '';
+          imgSrc = entry.svg || entry.image || svgs[bIdx] || '';
+          rarity = entry.rarity || rarities[bIdx] || pack.rarity || 'Common';
+          desc = entry.description || entry.desc || descs[bIdx] || '';
+        }
+
+        const displayName = cleanDisplayName(name);
+        const packTitle = pack.name || pack.title || '';
+
+        const packDiv = clickedTile.closest('.BlooksPacks_pack___MJtt');
+        const blooksContainer = packDiv ? packDiv.querySelector('.BlooksPacks_blooks__ocBoL') : clickedTile.closest('.BlooksPacks_blooks__ocBoL');
+
+        const clone = modalTemplate.cloneNode(true);
+        const modalImg = clone.querySelector('#modal-img');
+        const modalBg = clone.querySelector('#modal-bg');
+        const modalBlook = clone.querySelector('.BlookModal_modalBlook__y3uOR');
+        const modalInfo = clone.querySelector('#modal-info');
+
+        if (modalImg) {
+          modalImg.src = imgSrc || '';
+          modalImg.alt = displayName || '';
+        }
+
+        let bgVal = '';
+        if (Array.isArray(pack.blookBackground)) {
+          bgVal = pack.blookBackground[bIdx] || '';
+        } else {
+          bgVal = pack.blookBackground || pack.tileBackground || pack.bg || '';
+        }
+        if (bgVal && String(bgVal).trim().startsWith('linear-gradient')) {
+          if (modalBlook) modalBlook.style.backgroundImage = bgVal;
+          if (modalBg) { modalBg.style.display = 'none'; modalBg.src = ''; }
+        } else if (bgVal) {
+          if (modalBg) { modalBg.style.display = ''; modalBg.src = bgVal; modalBg.alt = packTitle; }
+          if (modalBlook) modalBlook.style.backgroundImage = '';
+        } else {
+          if (modalBg) { modalBg.style.display = 'none'; modalBg.src = ''; }
+          if (modalBlook) modalBlook.style.backgroundImage = '';
+        }
+
+        const rarityIcons = {
+          Common: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/common.38546a9e.svg",
+          Uncommon: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/uncommon.2b8463be.svg",
+          Rare: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/rare.efca39f2.svg",
+          Epic: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/epic.7f15d3ac.svg",
+          Legendary: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/legendary.864a3830.svg",
+          Chroma: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/chroma.2f1bc592.svg",
+          Unique: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/unique.8a843b99.svg",
+          Mystical: "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/mystical.ad0d7147.svg"
+        };
+
+        const rarityIcon = rarityIcons[rarity] || "https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/media/common.38546a9e.svg";
+
+        if (modalInfo) {
+          modalInfo.innerHTML = `
+        <h2>${esc(displayName)}</h2>
+        <h3>${esc(packTitle)}</h3>
+        <div class="BlookModal_tags__My798">
+          <span class="BlookModal_tag__iidYw">
+            <img alt="${esc(rarity)}" draggable="false" loading="lazy" width="20" height="25" src="${rarityIcon}" style="color: transparent; margin: 0px 5px 0px -3px;">
+            ${esc(rarity)}
+          </span>
+        </div>
+        <div class="BlookModal_description__tq3g">${esc(desc || '')}</div>
+      `;
+        }
+
+        const closeBtn = clone.querySelector('._closeIcon_fhi6r_70');
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+        if (clickedTile) {
+          clickedTile.appendChild(clone);
+        } else if (blooksContainer) {
+          blooksContainer.appendChild(clone);
+        }
+
+        setTimeout(() => document.addEventListener('click', outsideClickClose), 0);
+      }
+
+      function closeModal() {
+        const m = document.querySelector('._modal_fhi6r_13.BlookModal_blookModal__kZ5LX');
+        if (m) m.remove();
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        if (modalOverlay) modalOverlay.classList.remove('active');
+
+        document.removeEventListener('click', outsideClickClose);
+      }
+
+      function outsideClickClose(e) {
+        const m = document.querySelector('._modal_fhi6r_13.BlookModal_blookModal__kZ5LX');
+        if (m && !m.contains(e.target) && !e.target.closest('.BlookModal_blook__h0dTV')) {
+          closeModal();
+        }
+      }
+
+      packsScroll.addEventListener('click', function (ev) {
+        const tile = ev.target.closest('.BlookModal_blook__h0dTV');
+        if (!tile) return;
+
+        if (tile.dataset.locked === "true") {
+          ev.stopPropagation();
+          ev.preventDefault();
+          return;
+        }
+
+        openModal(tile.dataset.pack, tile.dataset.index, tile);
+      });
+
+      if (chkFree) chkFree.addEventListener('change', render);
+      if (chkPacks) chkPacks.addEventListener('change', render);
+
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+      render();
+
+      chkFree.addEventListener('change', () => {
+        render();
+        packsScroll.scrollTop = 0;
+      });
+    });    
+  </script>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function openSidebar() {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+    }
+
+    function closeSidebarMenu() {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+
+    hamburgerBtn.addEventListener('click', openSidebar);
+    overlay.addEventListener('click', closeSidebarMenu);
+  </script>
+
+  <script src="./assets/js/particles.js"></script>
+
+  <script>
+    window.addEventListener('beforeunload', function (e) {
+      e.preventDefault();
+      e.returnValue = '';
+    });
+  </script>
+
+  <script>
+    window.addEventListener('beforeunload', function (e) {
+      e.preventDefault();
+      e.returnValue = '';
+    });
+  </script>
+</body>
+
+</html>
