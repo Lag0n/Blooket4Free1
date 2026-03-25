@@ -1,0 +1,82 @@
+{
+  "name": "Space Pack",
+  "id": "space",
+  "bg": "radial-gradient(circle, #1c259c 0%, #070028 100%)",
+  "blook": [
+    "Earth",
+    "Meteor",
+    "Stars",
+    "Alien",
+    "Planet",
+    "UFO",
+    "Spaceship",
+    "Astronaut",
+    "Colored Astronaut"
+  ],
+  "chance": [
+    18.75,
+    18.75,
+    18.75,
+    18.75,
+    10,
+    10,
+    4.5,
+    0.45,
+    0.05
+  ],
+  "svg": [
+    "https://ac.blooket.com/marketassets/blooks/earth.svg",
+    "https://ac.blooket.com/marketassets/blooks/meteor.svg",
+    "https://ac.blooket.com/marketassets/blooks/stars.svg",
+    "https://ac.blooket.com/marketassets/blooks/alien.svg",
+    "https://ac.blooket.com/marketassets/blooks/planet.svg",
+    "https://ac.blooket.com/marketassets/blooks/ufo.svg",
+    "https://ac.blooket.com/marketassets/blooks/spaceship.svg",
+    "https://ac.blooket.com/marketassets/blooks/astronaut.svg",
+    "https://ac.blooket.com/marketassets/blooks/redastronaut.svg"
+  ],
+  "png": "https://media.blooket.com/image/upload/f_auto,q_auto:best/v1661921783/Media/market/png/Space_Pack.png",
+  "rarity": [
+    "Uncommon",
+    "Uncommon",
+    "Uncommon",
+    "Uncommon",
+    "Rare",
+    "Rare",
+    "Epic",
+    "Legendary",
+    "Chroma"
+  ],
+  "colorBlook": [
+    "Pink Astronaut",
+    "Yellow Astronaut",
+    "Black Astronaut",
+    "Orange Astronaut",
+    "Red Astronaut",
+    "Brown Astronaut",
+    "Green Astronaut"
+  ],
+  "colorSvg": [
+    "https://ac.blooket.com/marketassets/blooks/pinkastronaut.svg",
+    "https://ac.blooket.com/marketassets/blooks/yellowastronaut.svg",
+    "https://ac.blooket.com/marketassets/blooks/blackastronaut.svg",
+    "https://ac.blooket.com/marketassets/blooks/orangeastronaut.svg",
+    "https://ac.blooket.com/marketassets/blooks/redastronaut.svg",
+    "https://ac.blooket.com/marketassets/blooks/brownastronaut.svg",
+    "https://ac.blooket.com/marketassets/blooks/greenastronaut.svg"
+  ],
+  "colorRarity": [
+    "Chroma",
+    "Chroma",
+    "Chroma",
+    "Chroma",
+    "Chroma",
+    "Chroma",
+    "Chroma"
+  ],
+  "packBottom": "https://ac.blooket.com/dashclassic/assets/SpacePackBottom-D7AfM-Ek.png",
+  "cornerIcon": "https://ac.blooket.com/dashclassic/assets/Nav_Icon_Space-BLoNMfKq.svg",
+  "blookBackground": "https://ac.blooket.com/dashclassic/assets/Highlighted_Background_Space-BVfDeCoN.svg",
+  "comingSoon": false,
+  "tileBackground": "./assets/blooktiles/space.svg"
+}

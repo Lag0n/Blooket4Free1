@@ -1,0 +1,78 @@
+{
+  "name": "Debug Pack",
+  "id": "debug_full",
+  "bg": "radial-gradient(circle, #00ff00 0%, #000000 100%)",
+  "blook": [
+    "Uncommon",
+    "Rare",
+    "Epic",
+    "Legendary",
+    "Chroma",
+    "Unique",
+    "Mystical",
+    "Rotating"
+  ],
+  "chance": [
+    12.5,
+    12.5,
+    12.5,
+    12.5,
+    12.5,
+    12.5,
+    12.5,
+    12.5
+  ],
+  "svg": [
+    "https://ac.blooket.com/marketassets/blooks/lightblue.svg",
+    "https://ac.blooket.com/marketassets/blooks/lightblue.svg",
+    "https://ac.blooket.com/marketassets/blooks/lightblue.svg",
+    "https://ac.blooket.com/marketassets/blooks/lightblue.svg",
+    "https://ac.blooket.com/marketassets/blooks/lightblue.svg",
+    "https://ac.blooket.com/marketassets/blooks/lightblue.svg",
+    "https://ac.blooket.com/marketassets/blooks/lightblue.svg",
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4="
+  ],
+  "png": "https://blacket.org/content/packs/Debug.webp",
+  "rarity": [
+    "Uncommon",
+    "Rare",
+    "Epic",
+    "Legendary",
+    "Chroma",
+    "Unique",
+    "Mystical",
+    "Chroma"
+  ],
+  "colorBlook": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+  "colorSvg": [
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4=",
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4=",
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4=",
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4=",
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4=",
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4=",
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzQ1Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgeTI9IjE2MS4xNiIgeDI9IjE1MCIgeTE9IjM1Ni4xMSIgeDE9IjE1MCIgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjMGJjMmNmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGI0ZmFjIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMjYzLjYyLDM0NUgzNi4zOEEzNi4zOCwzNi4zOCwwLDAsMSwwLDMwOC42MlYyNTkuMTRIMzAwdjQ5LjQ4QTM2LjM4LDM2LjM4LDAsMCwxLDI2My42MiwzNDVaIiBmaWxsPSJ1cmwoI0EpIi8+PHJlY3Qgcng9IjM2LjM4IiBoZWlnaHQ9IjI1My4zOSIgd2lkdGg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwYmMyY2YiLz48L3N2Zz4="
+  ],
+  "colorRarity": [
+    "Uncommon",
+    "Rare",
+    "Epic",
+    "Legendary",
+    "Chroma",
+    "Unique",
+    "Mystical"
+  ],
+  "packBottom": "./assets/misc_images/debug_bottom.png",
+  "cornerIcon": "./assets/misc_images/debug_navicon.svg",
+  "blookBackground": "https://ac.blooket.com/dashclassic/assets/Highlighted_Background_Generic-BG3_DSfA.svg",
+  "comingSoon": false,
+  "tileBackground": "./assets/blooktiles/bug.svg"
+}
