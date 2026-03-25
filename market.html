@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blooket4Free | Pack Maker</title>
+    <link rel="icon" type="image/x-icon" href="./assets/misc_images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Titan+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <link rel="stylesheet"
+        href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/121a1462914990a5.css">
+    <link rel="stylesheet"
+        href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/7d2a7f4491889bcd.css">
+    <link rel="stylesheet"
+        href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/43cb5a8b08a4fd81.css">
+    <link rel="stylesheet"
+        href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/a0406186fc01ce56.css">
+    <link rel="stylesheet"
+        href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/453191536c2b89e6.css">
+    <link rel="stylesheet"
+        href="https://ac.blooket.com/dashboard/ee3082e9bdda941fdd8418c7b00c1d2ee1cd3a73/_next/static/css/51e88ac748998e08.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Nunito', sans-serif;
+            color: white;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Titan One', cursive;
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px var(--gray-shadow);
+        }
+
+        .section {
+            box-shadow: 4px 4px var(--gray-shadow);
+            border: 6px solid var(--white-transparent);
+            border-radius: var(--card-radius);
+            background-color: var(--purple);
+            width: 100%;
+            color: var(--white);
+            background-color: var(--purple);
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="color"],
+        select {
+            width: 100%;
+            padding: 6px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 5px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+        button {
+            background: #0bc2cf;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            margin: 5px 0;
+            box-shadow: inset 0 -5px rgb(0 0 0 / 20%), 4px 4px var(--gray-shadow);
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(0.95);
+        }
+
+        .colorRow {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+        .colorRow label {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            white-space: nowrap;
+
+        }
+
+        .colorRow input[type="color"] {
+            width: 40px;
+            height: 30px;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+
+            height: 100%;
+            width: 300px;
+            transition: left 0.3s ease;
+            z-index: 1005;
+        }
+
+        #sidebar.active {
+            left: 0;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            z-index: 1004;
+        }
+
+        #overlay.active {
+            display: block;
+        }
+
+        .hamburger {
+            position: fixed;
+            top: 17px;
+            left: 23px;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            z-index: 1003;
+            box-shadow: none;
+        }
+
+        .hamburger img {
+            width: 30px;
+
+            height: 30px;
+            filter: drop-shadow(4px 4px var(--gray-shadow));
+            transition: transform 0.2s;
+        }
+
+        .hamburger img:hover {
+            transform: scale(0.95);
+        }
+
+        #closeSidebar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .Sidebar_logoDesktop__NeFcd {
+            display: block !important;
+            margin: 0 auto 0 !important;
+
+            width: 80% !important;
+        }
+
+        @media (max-width: 625px) {
+            .Sidebar_logoDesktop__NeFcd {
+                margin-top: 20px !important;
+            }
+        }
+
+        #sidebar.Sidebar_sidebar__J7H_G {
+            justify-content: flex-start !important;
+        }
+
+        .blookGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .blookBlock {
+            background: #0bc2cf;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 -5px rgb(0 0 0 / 20%), 4px 4px var(--gray-shadow);
+            position: relative;
+        }
+
+        body.dark-mode .blookBlock {
+            background: linear-gradient(to bottom, #21252a, #000000);
+            border: 2px solid #ffffff;
+        }
+
+        .blook-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 6px;
+            margin: 10px 0;
+            filter: drop-shadow(4px 4px var(--gray-shadow));
+        }
+
+        .blookBlock input,
+        .blookBlock select {
+            margin: 5px 0;
+            padding: 6px;
+            border: 2px solid var(--white-transparent);
+            border-radius: 8px;
+            text-align: center;
+            width: 100%;
+            background: white;
+            color: black;
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+        }
+
+        .blookBlock button {
+            margin-top: 8px;
+        }
+
+        .blookBlock button {
+            background: var(--purple);
+        }
+
+        .blookTileBg {
+            background-color: var(--purple);
+            border-radius: var(--card-radius);
+            border: 6px solid var(--white-transparent);
+        }
+
+        .custom-upload {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+            background: var(--purple);
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+            text-align: center;
+            box-shadow: inset 0 -4px rgba(0, 0, 0, 0.2), 4px 4px var(--gray-shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .custom-upload:hover {
+            transform: scale(0.97);
+        }
+
+        .hidden-file-input {
+            display: none;
+        }
+
+        ._checkers_l90pt_12 {
+            z-index: 2;
+            width: 500%;
+            height: 500%;
+            pointer-events: none;
+        }
+
+        pre {
+            background: #0f1724;
+            color: #e6eef8;
+            padding: 12px;
+            border-radius: 8px;
+            overflow: auto;
+            max-height: 300px;
+            margin-top: 20px;
+        }
+
+        .zIndex2 {
+            position: relative;
+            z-index: 1000;
+        }
+
+        h2 {
+            font-family: 'Titan One', cursive;
+            font-weight: normal;
+            text-shadow: 4px 4px var(--gray-shadow);
+        }
+
+        .drag-handle {
+            position: absolute;
+            bottom: 12px;
+            left: 5px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            cursor: grab;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+            transform: translateY(1px);
+        }
+
+        .drag-handle::before {
+            content: "⋮⋮";
+            line-height: 0.8;
+        }
+
+        .sortable-ghost {
+            opacity: 0.6;
+            transform: scale(0.99);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="sidebar" class="Sidebar_sidebar__J7H_G">
+        <img alt="Blooket" loading="lazy" width="168" decoding="async" data-nimg="1" class="Sidebar_logoDesktop__NeFcd"
+            src="./assets/misc_images/logo.png">
+        <ul class="Sidebar_list__ljw79">
+            <li>
+                <a class="Sidebar_link__pbkfx" href="./blooks.html">
+                    <span class="Sidebar_listIcon__rg5X6">
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512" class="svg-inline--fa fa-suitcase fa-w-16">
+                            <path fill="currentColor"
+                                d="M128 480h256V80c0-26.5-21.5-48-48-48H176c-26.5 0-48 21.5-48 48v400zm64-384h128v32H192V96zm320 80v256c0 26.5-21.5 48-48 48h-48V128h48c26.5 0 48 21.5 48 48zM96 480H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48h48v352z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span class="Sidebar_text__TwkTk">Blooks</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="Sidebar_link__pbkfx" href="./">
+                    <span class="Sidebar_listIcon__rg5X6">
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 616 512" class="svg-inline--fa fa-store fa-w-20">
+                            <path fill="currentColor"
+                                d="M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-33.5 53.5-3.8 127.9 58.8 136.4 4.5.6 9.1.9 13.7.9 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18.1 20.1 44.3 33.1 73.8 33.1 4.7 0 9.2-.3 13.7-.9 62.8-8.4 92.6-82.8 59-136.4zM529.5 288c-10 0-19.9-1.5-29.5-3.8V384H116v-99.8c-9.6 2.2-19.5 3.8-29.5 3.8-6 0-12.1-.4-18-1.2-5.6-.8-11.1-2.1-16.4-3.6V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32V283.2c-5.4 1.6-10.8 2.9-16.4 3.6-6.1.8-12.1 1.2-18.2 1.2z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span class="Sidebar_text__TwkTk">Market</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="Sidebar_link__pbkfx" href="./maker.html">
+                    <span class="Sidebar_listIcon__rg5X6" style="scale: 1.2; margin-top: 8px;">
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512" class="svg-inline--fa fa-store fa-w-20">
+                            <path fill="currentColor"
+                                d="M328.41269,285.7436l-39.66604,39.66604c-6.74045,6.74045 -17.67231,6.74045 -24.41283,0l-37.62562,-37.62562c-7.2319,-7.2307 -17.23499,-10.72933 -27.4579,-9.61416c-10.19073,1.11982 -19.19375,6.71398 -24.69935,15.35103c-70.47063,110.55325 -80.77985,120.86374 -84.16789,124.25065c-24.27818,24.28044 -63.82566,24.32878 -88.15445,0c-24.30458,-24.30577 -24.30458,-63.851 0,-88.15445c3.38578,-3.38691 13.69155,-13.69387 124.25059,-84.16909c8.65779,-5.51943 14.26465,-14.52591 15.38214,-24.71198c1.11862,-10.19299 -2.39716,-20.19727 -9.64635,-27.4464l-37.62562,-37.62562c-3.23843,-3.23617 -5.05677,-7.62774 -5.05677,-12.20582c0,-4.57801 1.81946,-8.96851 5.05677,-12.20582l39.66491,-39.66491zM64.61681,355.38332c-9.52786,-9.52892 -24.97676,-9.52892 -34.50568,0c-9.52892,9.52786 -9.52892,24.97676 0,34.50568c9.52786,9.52892 24.97676,9.52892 34.50568,0c9.52892,-9.52892 9.52892,-24.97789 0,-34.50568zM353.92565,260.23176l-194.15848,-194.15841l137.0192,-137.01801c6.74164,-6.74045 17.67231,-6.74045 24.41276,0l17.64013,17.6378c5.07405,5.07518 6.48039,12.75818 3.53081,19.30074l-4.65288,10.32305l9.71656,-4.67815c6.60813,-3.18437 14.50756,-1.8414 19.69551,3.34662l56.19553,56.1956c5.83361,5.83128 6.72436,14.97594 2.12906,21.82457l-36.79818,54.83986l54.47162,-37.02259c6.85209,-4.65634 16.05074,-3.7874 21.90968,2.07154l25.90661,25.90654c6.74164,6.74164 6.74164,17.67231 0,24.41283z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span class="Sidebar_text__TwkTk">Pack Maker</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <button id="hamburgerBtn" class="hamburger">
+        <img src="./assets/misc_images/borgor.svg" alt="Menu">
+    </button>
+
+    <div class="_background_l90pt_1" style="background:linear-gradient(#0bc2cf,#349aef)">
+        <div class="_checkers_l90pt_12" style="background-size:1000px"></div>
+    </div>
+
+    <div class="container">
+        <h1>Pack Maker</h1>
+        <div class="section">
+
+            <div class="zIndex2">
+                <h2>Pack Metadata</h2>
+                <label>Name <input type="text" id="packName" value="Custom Pack" placeholder="Pack"></label>
+                <label>ID <input type="text" id="packId" value="custom" placeholder="pack"></label>
+                <div class="colorRow">
+                    <label>Gradient Outer Color: <input type="color" id="outerColor" value="#000000"></label>
+                    <label>Gradient Inner Color: <input type="color" id="innerColor" value="#ffffff"></label>
+                </div>
+            </div>
+
+            <div class="_checkers_l90pt_12" style="opacity: 0.05;"></div>
+        </div>
+
+        <div class="section">
+            <div class="_checkers_l90pt_12" style="opacity: 0.05;"></div>
+            <div class="zIndex2">
+                <h2>Pack Images</h2>
+                <div id="packImageContainer" class="blookGrid">
+                    <div class="blookBlock packBlock" data-input-id="packPng">
+                        <div style="font-weight:bold; margin-bottom:8px;">Pack Image</div>
+                        <img class="blook-image" src="./assets/misc_images/unknown.svg" alt="Pack Image">
+                        <label class="custom-upload">Upload
+                            <input type="file" id="packPng" accept="image/*" class="hidden-file-input">
+                        </label>
+                    </div>
+
+                    <div class="blookBlock packBlock" data-input-id="packBottom">
+                        <div style="font-weight:bold; margin-bottom:8px;">Pack Bottom</div>
+                        <img class="blook-image" src="./assets/misc_images/unknown.svg" alt="Pack Bottom">
+                        <label class="custom-upload">Upload
+                            <input type="file" id="packBottom" accept="image/*" class="hidden-file-input">
+                        </label>
+                    </div>
+
+                    <div class="blookBlock packBlock" data-input-id="cornerIcon">
+                        <div style="font-weight:bold; margin-bottom:8px;">Corner Icon</div>
+                        <img class="blook-image" src="./assets/misc_images/unknown.svg" alt="Corner Icon">
+                        <label class="custom-upload">Upload
+                            <input type="file" id="cornerIcon" accept="image/*" class="hidden-file-input">
+                        </label>
+                    </div>
+
+                    <div class="blookBlock packBlock" data-input-id="tileBackground">
+                        <div style="font-weight:bold; margin-bottom:8px;">Tile Background</div>
+                        <img class="blook-image" src="./assets/misc_images/unknown.svg" alt="Tile Background">
+                        <label class="custom-upload">Upload
+                            <input type="file" id="tileBackground" accept="image/*" class="hidden-file-input">
+                        </label>
+                    </div>
+
+                    <div class="blookBlock packBlock" data-input-id="blookBackground">
+                        <div style="font-weight:bold; margin-bottom:8px;">Blook Background</div>
+                        <img class="blook-image" src="./assets/misc_images/unknown.svg" alt="Pack Image">
+                        <label class="custom-upload">Upload
+                            <input type="file" id="blookBackground" accept="image/*" class="hidden-file-input">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="_checkers_l90pt_12" style="opacity: 0.05;"></div>
+            <div class="zIndex2">
+                <h2>Blooks</h2>
+                <button type="button" onclick="addBlook()">+ Add Blook</button>
+                <div id="blookContainer" class="blookGrid"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="_checkers_l90pt_12" style="opacity: 0.05;"></div>
+            <div class="zIndex2">
+
+                <h2>Rotating Blooks</h2>
+                <button type="button" onclick="addColorBlook()">+ Add Rotating Blook</button>
+                <div id="colorContainer" class="blookGrid"></div>
+            </div>
+        </div>
+
+        <button onclick="generateBpk()">Generate .bpk</button>
+        <button onclick="document.getElementById('importFile').click()">Import .bpk</button>
+        <input type="file" id="importFile" accept=".bpk,.json" style="display:none" onchange="importBpk(event)">
+        <button onclick="loadExample()">Load Example</button>
+
+        <pre id="output" style="display: none;"></pre>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.matchMedia("(max-width: 625px)").matches) {
+                alert("Hello! This website is not at all made for mobile devices. For the best experience, go open this on a computer. \n \n(If you are on a computer and see this message, just rezise the window.)");
+            }
+
+            if (window.Sortable) {
+                const blookContainerEl = document.getElementById('blookContainer');
+                const colorContainerEl = document.getElementById('colorContainer');
+
+                new Sortable(blookContainerEl, {
+                    group: 'blooks',
+                    animation: 150,
+                    handle: '.drag-handle',
+                    draggable: '.blookBlock',
+                    ghostClass: 'sortable-ghost'
+                });
+
+                new Sortable(colorContainerEl, {
+                    group: 'colorblooks',
+                    animation: 150,
+                    handle: '.drag-handle',
+                    draggable: '.blookBlock',
+                    ghostClass: 'sortable-ghost'
+                });
+            }
+        });
+
+
+        const rarities = ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Chroma", "Unique", "Mystical"];
+        function createRarityDropdown(selected = "") { return `<select>` + rarities.map(r => `<option value="${r}" ${r === selected ? "selected" : ""}>${r}</option>`).join("") + `</select>`; }
+        function fileToDataUrl(file, cb) { const r = new FileReader(); r.onload = e => cb(e.target.result); r.readAsDataURL(file); }
+        ["packPng", "packBottom", "cornerIcon", "tileBackground", "blookBackground"].forEach(id => {
+            const input = document.getElementById(id);
+            const block = input.closest(".packBlock");
+            const img = block.querySelector(".blook-image");
+
+            input.addEventListener("change", e => {
+                const file = e.target.files[0];
+                if (file) {
+                    fileToDataUrl(file, d => {
+                        img.src = d;
+                        input.dataset.remote = d;
+                    });
+                }
+            });
+        });
+
+        function escapeHtml(s) { return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, "&#39;"); }
+
+        function addBlook(name = "", rarity = "Uncommon", chance = "", svg = "") {
+            const container = document.querySelector("#blookContainer");
+            const block = document.createElement("div");
+            block.className = "blookBlock";
+
+            block.innerHTML = `
+    <div class="drag-handle" title="Drag to reorder" aria-hidden="true"></div>
+    <input type="text" value="${escapeHtml(name)}" placeholder="Name">
+    ${createRarityDropdown(rarity)}
+    <input type="number" step="0.01" value="${chance}" placeholder="Chance %">
+    <img class="blook-image" src="${svg || './assets/misc_images/unknown.svg'}" alt="Blook Image">
+
+    <label class="custom-upload">Upload Image
+      <input type="file" accept="image/*" class="hidden-file-input">
+    </label>
+
+    <button onclick="this.closest('.blookBlock').remove()">Delete</button>
+  `;
+
+            const fileInput = block.querySelector(".hidden-file-input");
+            const img = block.querySelector(".blook-image");
+
+            fileInput.addEventListener("change", e => {
+                const file = e.target.files[0];
+                if (file) {
+                    fileToDataUrl(file, d => {
+                        img.src = d;
+                        block.dataset.svg = d;
+                    });
+                }
+            });
+
+            if (svg) block.dataset.svg = svg;
+
+            container.appendChild(block);
+        }
+
+        function addColorBlook(name = "", rarity = "Uncommon", svg = "") {
+            const container = document.querySelector("#colorContainer");
+            const block = document.createElement("div");
+            block.className = "blookBlock color-block";
+
+            block.innerHTML = `
+    <div class="drag-handle" title="Drag to reorder" aria-hidden="true"></div>
+    <input type="text" value="${escapeHtml(name)}" placeholder="Name">
+    ${createRarityDropdown(rarity)}
+    <img class="blook-image" src="${svg || './assets/misc_images/unknown.svg'}" alt="Blook Image">
+
+    <label class="custom-upload">Upload Image
+      <input type="file" accept="image/*" class="hidden-file-input">
+    </label>
+
+    <button onclick="this.closest('.blookBlock').remove()">Delete</button>
+  `;
+
+            const fileInput = block.querySelector(".hidden-file-input");
+            const img = block.querySelector(".blook-image");
+
+            fileInput.addEventListener("change", e => {
+                const file = e.target.files[0];
+                if (file) {
+                    fileToDataUrl(file, d => {
+                        img.src = d;
+                        block.dataset.svg = d;
+                    });
+                }
+            });
+
+            if (svg) block.dataset.svg = svg;
+
+            container.appendChild(block);
+        }
+
+        function generateBpk() {
+            const name = document.getElementById("packName").value;
+            const id = document.getElementById("packId").value;
+            const outer = document.getElementById("outerColor").value;
+            const inner = document.getElementById("innerColor").value;
+            const bg = `radial-gradient(circle, ${inner} 0%, ${outer} 100%)`;
+
+            const files = ["packPng", "packBottom", "cornerIcon", "tileBackground", "blookBackground"];
+            const fileMap = {};
+            files.forEach(fid => {
+                const inp = document.getElementById(fid);
+                fileMap[fid] = inp.dataset.remote || "";
+            });
+
+            const blookBlocks = document.querySelectorAll("#blookContainer .blookBlock");
+            const blookData = Array.from(blookBlocks).map(block => {
+                const name = block.querySelector("input[type=text]").value;
+                const rarity = block.querySelector("select").value;
+                const chance = parseFloat(block.querySelector("input[type=number]").value) || 0;
+                const svg = block.dataset.svg || "";
+                return { name, rarity, chance, svg };
+            });
+
+            const colorBlocks = document.querySelectorAll("#colorContainer .blookBlock");
+            const colorData = Array.from(colorBlocks).map(block => {
+                const name = block.querySelector("input[type=text]").value;
+                const rarity = block.querySelector("select").value;
+                const svg = block.dataset.svg || "";
+                return { name, rarity, svg };
+            });
+
+            const bpk = {
+                name,
+                id,
+                bg,
+                blook: blookData.map(b => b.name),
+                chance: blookData.map(b => b.chance),
+                svg: blookData.map(b => b.svg),
+                png: fileMap.packPng,
+                rarity: blookData.map(b => b.rarity),
+                colorBlook: colorData.map(c => c.name),
+                colorSvg: colorData.map(c => c.svg),
+                colorRarity: colorData.map(c => c.rarity),
+                packBottom: fileMap.packBottom,
+                cornerIcon: fileMap.cornerIcon,
+                blookBackground: fileMap.blookBackground,
+                comingSoon: false,
+                tileBackground: fileMap.tileBackground
+            };
+
+            const text = JSON.stringify(bpk, null, 2);
+            document.getElementById("output").textContent = text;
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+            a.download = `${id}.bpk`;
+            a.click();
+        }
+
+        function robustFixLooseJson(s) {
+
+            const strings = [];
+            s = s.replace(/"(?:\\.|[^"\\])*"/g, function (m) { strings.push(m); return `__STR_${strings.length - 1}__`; });
+
+            s = s.replace(/([\{\s,])([A-Za-z0-9_]+)\s*:/g, '$1"$2":');
+
+            s = s.replace(/,\s*([\}\]])/g, '$1');
+
+            s = s.replace(/__STR_(\d+)__/g, function (_, n) { return strings[Number(n)]; });
+            return s;
+        }
+
+        async function loadExample() {
+            try {
+                const response = await fetch('./assets/js/example.bpk');
+                if (!response.ok) throw new Error('Failed to load example file');
+
+                const text = await response.text();
+                let bpk = null;
+
+                try {
+                    bpk = JSON.parse(text);
+                } catch (err) {
+                    try {
+                        const fixed = robustFixLooseJson(text);
+                        bpk = JSON.parse(fixed);
+                    } catch (err2) {
+                        console.error('Example parse error', err2);
+                        return alert('Failed to load example: invalid format');
+                    }
+                }
+
+                loadBpkData(bpk);
+
+            } catch (error) {
+                alert('Could not load example file: ' + error.message);
+            }
+        }
+
+        function loadBpkData(bpk) {
+            document.getElementById("packName").value = bpk.name || "";
+            document.getElementById("packId").value = bpk.id || "";
+
+            if (bpk.bg && typeof bpk.bg === 'string' && bpk.bg.includes('radial-gradient')) {
+                const colors = bpk.bg.match(/#[0-9a-fA-F]{3,6}/g);
+                if (colors && colors.length >= 2) {
+                    document.getElementById('innerColor').value = colors[0];
+                    document.getElementById('outerColor').value = colors[1];
+                }
+            }
+
+            document.querySelector('#blookContainer').innerHTML = '';
+            document.querySelector('#colorContainer').innerHTML = '';
+
+            if (Array.isArray(bpk.blook)) {
+                bpk.blook.forEach((name, i) => {
+                    const rarity = (Array.isArray(bpk.rarity) && bpk.rarity[i]) ? bpk.rarity[i] : 'Uncommon';
+                    const chance = (Array.isArray(bpk.chance) && bpk.chance[i]) ? bpk.chance[i] : '';
+                    const svg = (Array.isArray(bpk.svg) && bpk.svg[i]) ? bpk.svg[i] : '';
+                    addBlook(name, rarity, chance, svg);
+                });
+            }
+
+            if (Array.isArray(bpk.colorBlook)) {
+                bpk.colorBlook.forEach((name, i) => {
+                    const rarity = (Array.isArray(bpk.colorRarity) && bpk.colorRarity[i]) ? bpk.colorRarity[i] : 'Uncommon';
+                    const svg = (Array.isArray(bpk.colorSvg) && bpk.colorSvg[i]) ? bpk.colorSvg[i] : '';
+                    addColorBlook(name, rarity, svg);
+                });
+            }
+
+            const fileMap = {
+                packPng: bpk.png || '',
+                packBottom: bpk.packBottom || '',
+                cornerIcon: bpk.cornerIcon || '',
+                tileBackground: bpk.tileBackground || '',
+                blookBackground: bpk.blookBackground || ''
+            };
+            Object.keys(fileMap).forEach(key => {
+                const val = fileMap[key];
+                if (val) {
+                    const inp = document.getElementById(key);
+                    const block = inp.closest(".packBlock");
+                    const img = block.querySelector(".blook-image");
+                    inp.dataset.remote = val;
+                    img.src = val;
+                }
+            });
+        }
+
+        function importBpk(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = e => {
+                let text = e.target.result;
+                let bpk = null;
+
+                try {
+                    bpk = JSON.parse(text);
+                } catch (err) {
+                    try {
+                        const fixed = robustFixLooseJson(text);
+                        bpk = JSON.parse(fixed);
+                    } catch (err2) {
+                        console.error('Import parse error', err2);
+                        return alert('Failed to import BPK: invalid format');
+                    }
+                }
+
+                loadBpkData(bpk);
+            };
+            reader.readAsText(file);
+        }
+
+    </script>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        function openSidebar() {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeSidebarMenu() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        hamburgerBtn.addEventListener('click', openSidebar);
+        overlay.addEventListener('click', closeSidebarMenu);
+    </script>
+    <script>
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
+</body>
+
+</html>
