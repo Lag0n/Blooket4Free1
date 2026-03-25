@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blooket4Free | Super Secret Debug</title>
+</head>
+<body>
+  <h1>Blook Storage Debug</h1>
+  <button onclick="refreshTable()">Refresh</button>
+  <button onclick="localStorage.removeItem('blooksCollection'); refreshTable();">
+    Clear Storage
+  </button>
+  <br>
+  <input id="setAllValue" type="number" value="1" min="0">
+  <button onclick="setAllTo()">Set All to</button>
+
+  <table id="blookTable">
+    <thead>
+      <tr><th>Blook</th><th>Count</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function refreshTable() {
+      const tbody = document.querySelector("#blookTable tbody");
+      tbody.innerHTML = "";
+
+      const data = JSON.parse(localStorage.getItem("blooksCollection")) || {};
+      const entries = Object.entries(data).sort((a,b) => a[0].localeCompare(b[0]));
+
+      if (entries.length === 0) {
+        const row = document.createElement("tr");
+        row.innerHTML = "<td colspan='2'>No data in storage</td>";
+        tbody.appendChild(row);
+        return;
+      }
+
+      for (const [blook, count] of entries) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${blook}</td><td>${count}</td>`;
+        tbody.appendChild(row);
+      }
+    }
+
+    function setAllTo() {
+      const val = parseInt(document.getElementById("setAllValue").value, 10) || 0;
+      const data = JSON.parse(localStorage.getItem("blooksCollection")) || {};
+
+      for (const key of Object.keys(data)) {
+        data[key] = val;
+      }
+
+      localStorage.setItem("blooksCollection", JSON.stringify(data));
+      refreshTable();
+    }
+
+    refreshTable();
+  </script>
+</body>
+</html>
